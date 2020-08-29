@@ -9,15 +9,18 @@ const myStore = storeBuilder
   .createReducer('drawer', { isOpened: false })
   .createReducer('posts', { items: [] })
   .createAction('drawer', 'open', (drawerState) => { drawerState.isOpened = true })
+  .createAction('drawer', 'close', (drawerState) => { drawerState.isOpened = false })
   .createAction('posts', 'setItems', (postsState, { payload }) => { postsState.items = payload })
   .build();
 
-console.log('Current state: ', myStore.value);
+console.log('Created store state: ', myStore.value);
 
 // Dispatching action
 myStore.dispatch({ type: 'drawer/open' });
+console.log('Store state after dispatch OPEN: ', myStore.value);
 
-console.log('New state: ', myStore.value);
+myStore.dispatch({ type: 'drawer/close' });
+console.log('Store state after dispatch CLOSE: ', myStore.value);
 
 /*
   NOTE:

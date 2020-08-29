@@ -2,5 +2,10 @@
   "name": "pr-patterns",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start:factory": "cd ./examples && node factory.js",
+    "start:builder": "cd ./examples && node builder.js",
+    "start:singleton": "cd ./examples && node singleton.js"
+  }
 }
